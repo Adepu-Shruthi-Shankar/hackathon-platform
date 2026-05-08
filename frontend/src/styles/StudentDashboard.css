@@ -1,0 +1,323 @@
+.student-page {
+  min-height: 100vh;
+  background: var(--bg-page);
+}
+
+.student-navbar {
+  height: 64px;
+  background: rgba(8,11,20,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.student-navbar-logo h2 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.student-navbar-logo span {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-left: 10px;
+}
+
+.student-role-badge {
+  padding: 5px 14px;
+  background: rgba(131,88,255,0.08);
+  border: 1px solid rgba(131,88,255,0.18);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #b69fff;
+}
+
+.student-hero {
+  background: rgba(14,18,35,0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-card);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.student-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(131,88,255,0.12), transparent 60%);
+  pointer-events: none;
+}
+
+.student-hero h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.student-hero p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.student-hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.hero-stat span:first-child {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+}
+
+.hero-stat span:last-child {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.student-filters {
+  display: flex;
+  gap: 6px;
+  padding: 20px 36px 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid var(--border-card);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: rgba(131,88,255,0.08);
+  border-color: rgba(131,88,255,0.25);
+  color: #b69fff;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 20px 36px 48px;
+}
+
+.student-hack-card {
+  background: rgba(14,18,35,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-hack-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(131,88,255,0.1), transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.student-hack-card > * { position: relative; z-index: 1; }
+
+.student-hack-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(131,88,255,0.3);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.shc-banner {
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #5b8dee);
+  opacity: 0.7;
+}
+
+.shc-body { padding: 18px; }
+
+.shc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.shc-body h4 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.shc-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.shc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.shc-meta-item {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shc-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+  margin: 12px 0;
+}
+
+.shc-eligibility {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.shc-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(131,88,255,0.07);
+  border: 1px solid rgba(131,88,255,0.15);
+  border-radius: 20px;
+  font-size: 10px;
+  color: #b69fff;
+  margin-bottom: 14px;
+}
+
+.shc-fee {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.shc-fee span {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-left: 4px;
+  font-family: var(--font-body);
+}
+
+.shc-apply-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 0 18px rgba(131,88,255,0.22);
+}
+
+.shc-apply-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 28px rgba(131,88,255,0.4);
+}
+
+.shc-apply-btn.ended {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.student-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 70px;
+  color: var(--text-secondary);
+}
+
+.student-empty h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.status-badge {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.status-active {
+  background: rgba(74,222,128,0.1);
+  color: #4ADE80;
+  border: 1px solid rgba(74,222,128,0.2);
+}
+
+.status-pending {
+  background: rgba(251,176,48,0.1);
+  color: #FBB030;
+  border: 1px solid rgba(251,176,48,0.2);
+}
+
+.status-ended {
+  background: rgba(136,136,153,0.08);
+  color: var(--text-secondary);
+  border: 1px solid rgba(136,136,153,0.15);
+}
