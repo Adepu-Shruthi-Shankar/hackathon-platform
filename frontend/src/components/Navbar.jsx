@@ -24,11 +24,11 @@ const Navbar = () => {
       <div className="navbar-container">
         {isCollegeForm ? (
           <span className="navbar-logo" style={{ cursor: 'default' }}>
-            Hackathon<span>Hub</span>
+            Nexus<span>Hack</span>
           </span>
         ) : (
           <Link to={dashboardPath} className="navbar-logo">
-            Hackathon<span>Hub</span>
+            Nexus<span>Hack</span>
           </Link>
         )}
         

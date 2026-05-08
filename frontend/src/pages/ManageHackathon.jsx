@@ -172,15 +172,15 @@ function ManageHackathon() {
           </div>
           <div className="manage-stat-card">
             <span className="manage-stat-label">Submissions</span>
-            <div className="manage-stat-number" style={{ color: '#4ADE80' }}>{withFile.length}</div>
+            <div className="manage-stat-number" style={{ color: '#a855f7' }}>{withFile.length}</div>
           </div>
           <div className="manage-stat-card">
             <span className="manage-stat-label">Approved</span>
-            <div className="manage-stat-number" style={{ color: '#FBB030' }}>{approvedRegs.length}</div>
+            <div className="manage-stat-number" style={{ color: '#c4b5fd' }}>{approvedRegs.length}</div>
           </div>
           <div className="manage-stat-card">
             <span className="manage-stat-label">Winner Announced</span>
-            <div className="manage-stat-number" style={{ color: winnerAnnounced ? '#4ADE80' : '#f87171', fontSize: '18px', paddingTop: '8px' }}>
+            <div className="manage-stat-number" style={{ color: winnerAnnounced ? '#a855f7' : '#f87171', fontSize: '18px', paddingTop: '8px' }}>
               {winnerAnnounced ? '✅ Yes' : '⏳ No'}
             </div>
           </div>
@@ -360,7 +360,7 @@ function ManageHackathon() {
                     return (
                       <div key={jr.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderRadius: 10, marginBottom: 8, background: 'rgba(168,85,247,0.06)', border: '1px solid rgba(168,85,247,0.12)' }}>
                         <span style={{ color: '#c4b5fd' }}>#{i + 1} {details?.teamName || jr.student_name}</span>
-                        <span style={{ color: '#FBB030', fontWeight: 700 }}>{jr.rating}/10 ⭐</span>
+                        <span style={{ color: '#c4b5fd', fontWeight: 700 }}>{jr.rating}/10 ⭐</span>
                       </div>
                     );
                   })}
@@ -441,7 +441,7 @@ function ManageHackathon() {
                 )}
 
                 {selectedReg.approval_status === 'approved' && (
-                  <div style={{ marginTop: 16, padding: '12px 16px', background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.15)', borderRadius: 10, fontSize: 13, color: '#4ADE80', textAlign: 'center' }}>
+                  <div style={{ marginTop: 16, padding: '12px 16px', background: 'rgba(168,85,247,0.06)', border: '1px solid rgba(168,85,247,0.15)', borderRadius: 10, fontSize: 13, color: '#a855f7', textAlign: 'center' }}>
                     ✅ This registration has been approved
                   </div>
                 )}

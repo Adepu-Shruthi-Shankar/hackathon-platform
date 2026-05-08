@@ -81,7 +81,7 @@
 .nav-link.active {
   color: #fff;
   background: var(--accent);
-  box-shadow: 0 0 18px rgba(131,88,255,0.4);
+  box-shadow: 0 0 18px rgba(168,85,247,0.4);
 }
 
 .nav-link .nav-icon { font-size: 14px; }
@@ -108,16 +108,16 @@
 }
 
 .navbar-icon-btn:hover {
-  border-color: rgba(131,88,255,0.3);
+  border-color: rgba(168,85,247,0.3);
   color: var(--text-primary);
-  background: rgba(131,88,255,0.08);
+  background: rgba(168,85,247,0.08);
 }
 
 .nav-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #5b8dee);
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +125,7 @@
   font-weight: 700;
   color: white;
   cursor: pointer;
-  box-shadow: 0 0 14px rgba(131,88,255,0.35);
+  box-shadow: 0 0 14px rgba(168,85,247,0.35);
 }
 
 .nav-logout-btn {
@@ -187,12 +187,12 @@
   font-family: var(--font-body);
   cursor: pointer;
   transition: all 0.25s;
-  box-shadow: 0 0 20px rgba(131,88,255,0.28);
+  box-shadow: 0 0 20px rgba(168,85,247,0.28);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  box-shadow: 0 0 30px rgba(131,88,255,0.5);
+  box-shadow: 0 0 30px rgba(168,85,247,0.5);
   transform: translateY(-1px);
 }
 

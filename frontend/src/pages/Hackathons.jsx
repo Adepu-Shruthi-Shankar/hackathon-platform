@@ -179,7 +179,7 @@ function Hackathons() {
                           </button>
                           <button
                             className="btn-table-manage"
-                            style={{ color: '#FBB030', borderColor: 'rgba(251,176,48,0.3)', background: 'rgba(251,176,48,0.08)' }}
+                            style={{ color: '#c4b5fd', borderColor: 'rgba(168,85,247,0.3)', background: 'rgba(168,85,247,0.08)' }}
                             onClick={() => handleEdit(h)}
                           >
                             Edit

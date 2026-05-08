@@ -62,15 +62,15 @@ function JuryDashboard() {
   const navbar = (
     <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 40px', background: '#080B14', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'sticky', top: 0, zIndex: 100 }}>
       <div style={{ fontSize: 20, fontWeight: 800, color: '#F0EFFF' }}>
-        ⚡ <span style={{ color: '#8358FF' }}>HackAdmin</span>{' '}
+        ⚡ <span style={{ color: '#a855f7' }}>HackAdmin</span>{' '}
         <span style={{ color: '#7A7A9D', fontWeight: 400, fontSize: 14 }}>Platform</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
         <span style={{ color: '#7A7A9D', fontSize: 14 }}>{user?.name}</span>
-        <span style={{ background: 'rgba(131,88,255,0.15)', color: '#8358FF', padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 600 }}>
+        <span style={{ background: 'rgba(168,85,247,0.15)', color: '#a855f7', padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 600 }}>
           {user?.designation || 'Jury'}
         </span>
-        <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg,#8358FF,#6038df)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#fff' }}>
+        <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg,#a855f7,#6038df)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: '#fff' }}>
           {user?.name?.charAt(0).toUpperCase()}
         </div>
         <button onClick={handleLogout} style={{ padding: '8px 16px', background: 'rgba(255,77,106,0.1)', border: '1px solid rgba(255,77,106,0.3)', color: '#FF4D6A', borderRadius: 10, cursor: 'pointer', fontWeight: 600 }}>
@@ -93,7 +93,7 @@ function JuryDashboard() {
 
           {/* Title */}
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 4 }}>
-            Evaluate <span style={{ color: '#8358FF' }}>{details?.teamName || evaluating.student_name}</span>
+            Evaluate <span style={{ color: '#a855f7' }}>{details?.teamName || evaluating.student_name}</span>
           </h1>
           <p style={{ color: '#7A7A9D', marginBottom: 32, fontSize: 15 }}>{evaluating.hackathon_title}</p>
 
@@ -126,9 +126,9 @@ function JuryDashboard() {
                   <button key={n} onClick={() => setRating(n)} style={{
                     width: 46, height: 46, borderRadius: 12, border: 'none', cursor: 'pointer',
                     fontWeight: 700, fontSize: 16,
-                    background: rating === n ? 'linear-gradient(135deg,#8358FF,#6038df)' : 'rgba(255,255,255,0.07)',
+                    background: rating === n ? 'linear-gradient(135deg,#a855f7,#6038df)' : 'rgba(255,255,255,0.07)',
                     color: '#fff', transition: 'all 0.2s',
-                    boxShadow: rating === n ? '0 0 16px rgba(131,88,255,0.4)' : 'none'
+                    boxShadow: rating === n ? '0 0 16px rgba(168,85,247,0.4)' : 'none'
                   }}>{n}</button>
                 ))}
               </div>
@@ -137,7 +137,7 @@ function JuryDashboard() {
               <p style={{ color: '#7A7A9D', fontSize: 11, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 16, fontWeight: 600 }}>Submission File</p>
               {evaluating.submission_file ? (
                 <a href={`http://localhost:5000/${evaluating.submission_file}`} target="_blank" rel="noreferrer"
-                  style={{ color: '#8358FF', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: 'rgba(131,88,255,0.1)', borderRadius: 10, border: '1px solid rgba(131,88,255,0.2)', textDecoration: 'none' }}>
+                  style={{ color: '#a855f7', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: 'rgba(168,85,247,0.1)', borderRadius: 10, border: '1px solid rgba(168,85,247,0.2)', textDecoration: 'none' }}>
                   📁 View Submission File
                 </a>
               ) : (
@@ -161,9 +161,9 @@ function JuryDashboard() {
           {/* Submit + Cancel */}
           <div style={{ display: 'flex', gap: 16 }}>
             <button onClick={handleSubmitEvaluation} disabled={submitting} style={{
-              flex: 2, padding: 18, background: '#22c55e', border: 'none', borderRadius: 14,
+              flex: 2, padding: 18, background: '#a855f7', border: 'none', borderRadius: 14,
               color: '#fff', fontWeight: 800, fontSize: 17, cursor: 'pointer',
-              boxShadow: '0 4px 20px rgba(34,197,94,0.3)'
+              boxShadow: '0 4px 20px rgba(168,85,247,0.3)'
             }}>
               {submitting ? 'Submitting...' : 'Submit'}
             </button>
@@ -188,12 +188,12 @@ function JuryDashboard() {
         {/* Stat Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 40 }}>
           {statCards.map((s, i) => (
-            <div key={i} style={{ background: 'linear-gradient(135deg, rgba(131,88,255,0.3), rgba(80,30,180,0.4))', borderRadius: 20, padding: '28px 24px', border: '1px solid rgba(131,88,255,0.25)' }}>
+            <div key={i} style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.3), rgba(80,30,180,0.4))', borderRadius: 20, padding: '28px 24px', border: '1px solid rgba(168,85,247,0.25)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
                 <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: 2, fontWeight: 600 }}>{s.label}</span>
                 <span style={{ fontSize: 22 }}>{s.icon}</span>
               </div>
-              <div style={{ fontSize: 52, fontWeight: 800, color: '#8358FF', lineHeight: 1 }}>{s.value}</div>
+              <div style={{ fontSize: 52, fontWeight: 800, color: '#a855f7', lineHeight: 1 }}>{s.value}</div>
             </div>
           ))}
         </div>
@@ -231,24 +231,24 @@ function JuryDashboard() {
                         <td style={{ padding: '14px 16px' }}>
                           <span style={{
                             padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 700,
-                            background: isReviewed ? 'rgba(74,222,128,0.12)' : 'rgba(251,176,48,0.12)',
-                            color: isReviewed ? '#4ADE80' : '#FBB030',
-                            border: `1px solid ${isReviewed ? 'rgba(74,222,128,0.3)' : 'rgba(251,176,48,0.3)'}`
+                            background: isReviewed ? 'rgba(168,85,247,0.12)' : 'rgba(168,85,247,0.12)',
+                            color: isReviewed ? '#a855f7' : '#c4b5fd',
+                            border: `1px solid ${isReviewed ? 'rgba(168,85,247,0.3)' : 'rgba(168,85,247,0.3)'}`
                           }}>
                             {isReviewed ? 'Finished' : 'Waiting'}
                           </span>
                         </td>
                         <td style={{ padding: '14px 16px' }}>
                           {sub.rating
-                            ? <span style={{ color: '#FBB030', fontWeight: 700 }}>{sub.rating} ⭐</span>
+                            ? <span style={{ color: '#c4b5fd', fontWeight: 700 }}>{sub.rating} ⭐</span>
                             : <span style={{ color: '#7A7A9D' }}>—</span>}
                         </td>
                         <td style={{ padding: '14px 16px' }}>
                           <button onClick={() => handleEvaluate(sub)} style={{
-                            padding: '7px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700,
-                            background: isReviewed ? 'rgba(74,222,128,0.12)' : 'linear-gradient(135deg,#8358FF,#6038df)',
-                            color: isReviewed ? '#4ADE80' : '#fff',
-                            border: isReviewed ? '1px solid rgba(74,222,128,0.3)' : 'none'
+                            padding: '7px 18px', borderRadius: 8, cursor: 'pointer', fontSize: 13, fontWeight: 700,
+                            background: isReviewed ? 'rgba(168,85,247,0.12)' : 'linear-gradient(135deg,#a855f7,#6038df)',
+                            color: isReviewed ? '#a855f7' : '#fff',
+                            border: isReviewed ? '1px solid rgba(168,85,247,0.3)' : 'none'
                           }}>
                             {isReviewed ? 'View' : 'Evaluate'}
                           </button>
@@ -272,8 +272,8 @@ function JuryDashboard() {
                 .slice(0, 5)
                 .map((sub, i) => {
                   const details = typeof sub.team_details === 'string' ? JSON.parse(sub.team_details) : sub.team_details;
-                  const rankColors = ['#FBB030', '#9ca3af', '#f97316', '#8358FF', '#8358FF'];
-                  const rankBgs = ['rgba(251,176,48,0.12)', 'rgba(156,163,175,0.1)', 'rgba(249,115,22,0.12)', 'rgba(131,88,255,0.12)', 'rgba(131,88,255,0.08)'];
+                  const rankColors = ['#c4b5fd', '#9ca3af', '#f97316', '#a855f7', '#a855f7'];
+                  const rankBgs = ['rgba(168,85,247,0.12)', 'rgba(156,163,175,0.1)', 'rgba(249,115,22,0.12)', 'rgba(168,85,247,0.12)', 'rgba(168,85,247,0.08)'];
                   return (
                     <div key={sub.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', borderRadius: 12, marginBottom: 10, background: rankBgs[i], border: `1px solid ${rankColors[i]}33` }}>
                       <span style={{ fontWeight: 700, color: rankColors[i] }}>#{i + 1} {details?.teamName || sub.student_name}</span>

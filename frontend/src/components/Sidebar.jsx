@@ -16,12 +16,12 @@ function Sidebar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-        <h2>⚡ HackAdmin</h2>
-        <span>Platform</span>
+      <div className="navbar-logo" onClick={() => navigate('/admin/dashboard')} style={{ cursor: 'pointer' }}>
+        <h2>⚡ NexusHack</h2>
+        <span>Ecosystem</span>
       </div>
       <div className="navbar-links">
-        <button className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => navigate('/')}>
+        <button className={`nav-link ${isActive('/admin/dashboard') ? 'active' : ''}`} onClick={() => navigate('/admin/dashboard')}>
           <span className="nav-icon">🏠</span> Dashboard
         </button>
         <button className={`nav-link ${isActive('/hackathons') ? 'active' : ''}`} onClick={() => navigate('/hackathons')}>

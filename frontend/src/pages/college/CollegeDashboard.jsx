@@ -14,8 +14,8 @@ const CollegeDashboard = () => {
   const [winners, setWinners] = useState([]);
 
   const StatusBadge = ({ status }) => {
-    let color = '#f59e0b', bgColor = 'rgba(245,158,11,0.1)';
-    if (status === 'approved' || status === 'paid') { color = '#10b981'; bgColor = 'rgba(16,185,129,0.1)'; }
+    let color = '#c4b5fd', bgColor = 'rgba(168,85,247,0.1)';
+    if (status === 'approved' || status === 'paid') { color = '#a855f7'; bgColor = 'rgba(168,85,247,0.1)'; }
     else if (status === 'rejected') { color = '#ef4444'; bgColor = 'rgba(239,68,68,0.1)'; }
     return (
       <span style={{ display: 'inline-block', padding: '4px 8px', borderRadius: 4, color, backgroundColor: bgColor, fontWeight: 'bold', fontSize: '0.8rem', textTransform: 'uppercase', border: `1px solid ${color}` }}>
@@ -75,7 +75,7 @@ const CollegeDashboard = () => {
   const stats = [
     { label: 'TOTAL EVENTS', value: String(hackathons.length).padStart(2, '0'), color: 'var(--accent-color)' },
     { label: 'ACTIVE NOW', value: String(hackathons.filter(h => h.status === 'active').length).padStart(2, '0'), color: 'var(--secondary-color)' },
-    { label: 'APPROVED', value: String(registrations.filter(r => r.approval_status === 'approved').length).padStart(2, '0'), color: '#10b981' },
+    { label: 'APPROVED', value: String(registrations.filter(r => r.approval_status === 'approved').length).padStart(2, '0'), color: '#a855f7' },
     { label: 'PARTICIPANTS', value: String(registrations.length).padStart(2, '0'), color: '#B388FF' }
   ];
 
@@ -93,9 +93,9 @@ const CollegeDashboard = () => {
     </div>
     <div className="hackathon-grid">
       {winners.map(w => (
-        <div key={w.id} className="hackathon-card glass-card" style={{ borderTop: '3px solid #FBB030' }}>
+        <div key={w.id} className="hackathon-card glass-card" style={{ borderTop: '3px solid #c4b5fd' }}>
           <div style={{ fontSize: 36, textAlign: 'center', marginBottom: 10 }}>🏆</div>
-          <h3 style={{ color: '#FBB030', textAlign: 'center', marginBottom: 5 }}>{w.team_name}</h3>
+          <h3 style={{ color: '#c4b5fd', textAlign: 'center', marginBottom: 5 }}>{w.team_name}</h3>
           <p style={{ color: 'var(--text-color)', textAlign: 'center', marginBottom: 5 }}>{w.project_name}</p>
           <p style={{ color: 'var(--muted)', textAlign: 'center', fontSize: 13 }}>Rating: {w.rating}/10 ⭐</p>
           {w.feedback && <p style={{ color: 'var(--muted)', textAlign: 'center', fontSize: 12, marginTop: 8, fontStyle: 'italic' }}>"{w.feedback}"</p>}
@@ -167,7 +167,7 @@ const CollegeDashboard = () => {
                 )}
                 <div style={{ display: 'flex', gap: 10 }}>
                   <button onClick={() => handleAction(reg.id, 'approve')} disabled={reg.approval_status === 'approved'}
-                    style={{ flex: 1, padding: 8, background: 'transparent', border: '1px solid #10b981', color: '#10b981', borderRadius: 5, cursor: reg.approval_status === 'approved' ? 'not-allowed' : 'pointer', opacity: reg.approval_status === 'approved' ? 0.5 : 1 }}>Approve</button>
+                    style={{ flex: 1, padding: 8, background: 'transparent', border: '1px solid #a855f7', color: '#a855f7', borderRadius: 5, cursor: reg.approval_status === 'approved' ? 'not-allowed' : 'pointer', opacity: reg.approval_status === 'approved' ? 0.5 : 1 }}>Approve</button>
                   <button onClick={() => handleAction(reg.id, 'reject')} disabled={reg.approval_status === 'rejected'}
                     style={{ flex: 1, padding: 8, background: 'transparent', border: '1px solid #ef4444', color: '#ef4444', borderRadius: 5, cursor: reg.approval_status === 'rejected' ? 'not-allowed' : 'pointer', opacity: reg.approval_status === 'rejected' ? 0.5 : 1 }}>Reject</button>
                 </div>

@@ -20,7 +20,7 @@ function Login() {
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
       localStorage.setItem('user', JSON.stringify(user));
-      if (role === 'admin') navigate('/');
+      if (role === 'admin') navigate('/admin/dashboard');
       else if (role === 'student') navigate('/dashboard');
       else if (role === 'college') navigate('/college/form');
       else if (role === 'jury') navigate('/jury-dashboard');
@@ -37,8 +37,8 @@ function Login() {
       <div className="login-bg-glow-2"></div>
       <div className="login-card">
         <div className="login-logo">
-          <h1>⚡ HackAdmin</h1>
-          <p>Hackathon Management Platform</p>
+          <h1>⚡ NexusHack</h1>
+          <p>Unified Hackathon Ecosystem</p>
         </div>
         <h2 className="login-title">Welcome back</h2>
         <p className="login-subtitle">Sign in to your account</p>

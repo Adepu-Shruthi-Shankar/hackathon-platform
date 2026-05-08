@@ -5,6 +5,8 @@
   background: var(--card);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 1.5rem;
@@ -105,18 +107,18 @@
 }
 
 .status-badge.warning {
-  background: rgba(251,146,60,0.09);
-  color: #fdba74;
-  border: 1px solid rgba(251,146,60,0.2);
+  background: rgba(168,85,247,0.09);
+  color: #c4b5fd;
+  border: 1px solid rgba(168,85,247,0.2);
 }
 
 .status-badge.warning::before {
   content: '';
   width: 6px;
   height: 6px;
-  background: #fb923c;
+  background: #c4b5fd;
   border-radius: 50%;
-  box-shadow: 0 0 8px #fb923c;
+  box-shadow: 0 0 8px #c4b5fd;
   animation: badgeBlink 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -171,7 +173,7 @@
   width: 100%;
   background: transparent;
   color: rgba(196,181,253,0.7);
-  border: 1px solid rgba(168,85,247,0.25);
+  border: 1px solid rgba(155,80,240,0.25);
   padding: 0.8rem;
   border-radius: 10px;
   font-weight: 600;

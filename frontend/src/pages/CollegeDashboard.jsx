@@ -24,12 +24,12 @@ function CollegeDashboard() {
       {/* Navbar */}
       <div className="student-navbar">
         <div className="student-navbar-logo">
-          <h2>⚡ HackAdmin</h2>
+          <h2>⚡ NexusHack</h2>
           <span>College Portal</span>
         </div>
         <div className="student-role-badge" 
-          style={{background:'rgba(0,194,255,0.1)',
-            borderColor:'rgba(0,194,255,0.2)',color:'#00C2FF'}}>
+          style={{background:'rgba(168,85,247,0.1)',
+            borderColor:'rgba(168,85,247,0.2)',color:'#c4b5fd'}}>
           🏫 College View
         </div>
       </div>

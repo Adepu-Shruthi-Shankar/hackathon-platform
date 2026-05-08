@@ -17,7 +17,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(155, 80, 240, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(168,85,247, 0.12) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,7 +29,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(91, 141, 238, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124,58,237, 0.07) 0%, transparent 70%);
   bottom: 8%;
   right: 10%;
   pointer-events: none;
@@ -68,7 +68,7 @@
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(155, 80, 240, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(168,85,247, 0.2), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -78,7 +78,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.07) 0%, transparent 55%);
+  background: linear-gradient(135deg, rgba(168,85,247, 0.07) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -159,8 +159,8 @@
 }
 
 .form-group input:focus {
-  border-color: rgba(168, 85, 247, 0.5);
-  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.08);
+  border-color: rgba(168,85,247, 0.5);
+  box-shadow: 0 0 0 3px rgba(168,85,247, 0.08);
 }
 
 .form-group input::placeholder { color: rgba(107, 114, 128, 0.5); }
@@ -179,13 +179,13 @@
   cursor: pointer;
   margin-top: 8px;
   transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.28);
+  box-shadow: 0 0 20px rgba(168,85,247, 0.28);
   letter-spacing: 0.2px;
 }
 
 .login-btn:hover {
   background: #9333ea;
-  box-shadow: 0 0 30px rgba(168, 85, 247, 0.42);
+  box-shadow: 0 0 30px rgba(168,85,247, 0.42);
   transform: translateY(-1px);
 }
 

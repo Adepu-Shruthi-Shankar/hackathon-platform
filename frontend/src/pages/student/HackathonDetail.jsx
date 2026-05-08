@@ -11,7 +11,7 @@ const HackathonDetail = () => {
     return (
       <div>
         <h2>Hackathon not found</h2>
-        <button onClick={() => navigate('/')}>Back to Dashboard</button>
+        <button onClick={() => navigate('/dashboard')}>Back to Dashboard</button>
       </div>
     );
   }

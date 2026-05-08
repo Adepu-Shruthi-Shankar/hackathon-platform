@@ -7,10 +7,10 @@
   --border: rgba(255, 255, 255, 0.055);
   --accent: #a855f7;
   --accent-hover: #9333ea;
-  --glow-color: rgba(155, 80, 240, 0.18);
+  --glow-color: rgba(168, 85, 247, 0.18);
   --text-primary: #f4f0ff;
   --text-secondary: #6b7280;
-  --success: #4ADE80;
+  --success: #a855f7;
   --error: #f87171;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
@@ -60,6 +60,8 @@
 
 .stat-card {
   background: var(--card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--border);
   border-radius: 22px;
   padding: 1.75rem;
@@ -70,10 +72,10 @@
   animation: riseIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.stat-card:nth-child(1) { animation-delay: 0.08s; border-top: 2px solid #A78BFA; }
-.stat-card:nth-child(2) { animation-delay: 0.16s; border-top: 2px solid #34D399; }
-.stat-card:nth-child(3) { animation-delay: 0.24s; border-top: 2px solid #FBB030; }
-.stat-card:nth-child(4) { animation-delay: 0.32s; border-top: 2px solid #F472B6; }
+.stat-card:nth-child(1) { animation-delay: 0.08s; border-top: 2px solid #c4b5fd; }
+.stat-card:nth-child(2) { animation-delay: 0.16s; border-top: 2px solid #a855f7; }
+.stat-card:nth-child(3) { animation-delay: 0.24s; border-top: 2px solid #c4b5fd; }
+.stat-card:nth-child(4) { animation-delay: 0.32s; border-top: 2px solid #7c3aed; }
 
 /* Static corner glow — always visible, no mouse tracking */
 .stat-card::before {
@@ -142,10 +144,10 @@
   z-index: 1;
 }
 
-.stat-number.color-1 { color: #A78BFA; }
-.stat-number.color-2 { color: #34D399; }
-.stat-number.color-3 { color: #FBB030; }
-.stat-number.color-4 { color: #F472B6; }
+.stat-number.color-1 { color: #c4b5fd; }
+.stat-number.color-2 { color: #a855f7; }
+.stat-number.color-3 { color: #c4b5fd; }
+.stat-number.color-4 { color: #7c3aed; }
 
 .stat-sub {
   font-size: 11px;
@@ -205,6 +207,8 @@
 /* ── Hack Card ── */
 .hack-card {
   background: var(--card);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
@@ -256,7 +260,7 @@
 
 .hack-card-top {
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), #5b8dee);
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
   opacity: 0.6;
   position: relative;
   z-index: 1;
@@ -298,15 +302,15 @@
 }
 
 .status-active {
-  background: rgba(74, 222, 128, 0.1);
-  color: #4ADE80;
-  border: 1px solid rgba(74, 222, 128, 0.2);
+  background: rgba(168,85,247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168,85,247, 0.2);
 }
 
 .status-pending {
-  background: rgba(251, 176, 48, 0.1);
-  color: #FBB030;
-  border: 1px solid rgba(251, 176, 48, 0.2);
+  background: rgba(168,85,247, 0.1);
+  color: #c4b5fd;
+  border: 1px solid rgba(168,85,247, 0.2);
 }
 
 .status-ended {
@@ -357,8 +361,8 @@
 
 .tag {
   padding: 3px 9px;
-  background: rgba(168, 85, 247, 0.08);
-  border: 1px solid rgba(168, 85, 247, 0.16);
+  background: rgba(168,85,247, 0.08);
+  border: 1px solid rgba(168,85,247, 0.16);
   border-radius: 20px;
   font-size: 10px;
   color: #c4b5fd;
@@ -377,8 +381,8 @@
 
 /* ── Buttons (shared) ── */
 .btn-primary {
-  background: rgba(168, 85, 247, 0.14);
-  border: 1px solid rgba(168, 85, 247, 0.28);
+  background: rgba(168,85,247, 0.14);
+  border: 1px solid rgba(155, 80, 240, 0.28);
   color: #c4b5fd;
   border-radius: 10px;
   padding: 9px 18px;
@@ -390,8 +394,8 @@
 }
 
 .btn-primary:hover {
-  background: rgba(168, 85, 247, 0.25);
-  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(168,85,247, 0.25);
+  border-color: rgba(168,85,247, 0.5);
   box-shadow: 0 0 16px rgba(168, 85, 247, 0.18);
 }
 
@@ -414,7 +418,7 @@
 }
 
 .btn-secondary:hover {
-  border-color: rgba(168, 85, 247, 0.22);
+  border-color: rgba(168,85,247, 0.22);
   color: var(--text-primary);
 }
 

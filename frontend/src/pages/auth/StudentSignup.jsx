@@ -34,16 +34,16 @@ const StudentSignup = () => {
     <div style={{ minHeight: '100vh', background: '#060608', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Space Grotesk, sans-serif' }}>
       <div style={{ width: 420, padding: 40, borderRadius: 24, border: '1px solid rgba(168,85,247,0.3)', background: 'linear-gradient(145deg, rgba(168,85,247,0.1), rgba(13,13,20,0.95))' }}>
         <h2 style={{ color: '#fff', textAlign: 'center', fontSize: 28, fontWeight: 800, marginBottom: 6 }}>Create Account</h2>
-        <p style={{ color: '#6b7280', textAlign: 'center', marginBottom: 24 }}>Join HackathonHub today</p>
+        <p style={{ color: '#6b7280', textAlign: 'center', marginBottom: 24 }}>Join NexusHack Platform</p>
 
         {error && <div style={{ color: '#ef4444', marginBottom: 16, textAlign: 'center', fontSize: 14 }}>{error}</div>}
 
         <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
-          {['student', 'college'].map(r => (
-            <button key={r} onClick={() => setRole(r)} style={{
+          {['student', 'college', 'jury', 'admin'].map(r => (
+            <button key={r} onClick={() => setRole(r)} type="button" style={{
               flex: 1, padding: '10px 0', borderRadius: 10, border: 'none', cursor: 'pointer',
               background: role === r ? 'linear-gradient(90deg,#a855f7,#9333ea)' : 'rgba(255,255,255,0.05)',
-              color: '#fff', fontWeight: 600, textTransform: 'capitalize'
+              color: '#fff', fontWeight: 600, textTransform: 'capitalize', fontSize: 13
             }}>{r}</button>
           ))}
         </div>

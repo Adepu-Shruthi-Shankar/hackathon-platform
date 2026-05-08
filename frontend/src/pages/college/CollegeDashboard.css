@@ -47,8 +47,8 @@
 }
 
 .college-card:hover {
-  border-color: rgba(155,80,240,0.25);
-  box-shadow: 0 0 0 1px rgba(155,80,240,0.08) inset, 0 15px 40px rgba(155,80,240,0.1);
+  border-color: rgba(168,85,247,0.25);
+  box-shadow: 0 0 0 1px rgba(168,85,247,0.08) inset, 0 15px 40px rgba(168,85,247,0.1);
 }
 
 .college-card:hover::after {

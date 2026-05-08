@@ -75,9 +75,9 @@ const RegistrationDetails = () => {
 
   const StatusBadge = ({ status }) => {
     let color, bgColor;
-    if (status === 'approved') { color = '#10b981'; bgColor = 'rgba(16, 185, 129, 0.1)'; }
+    if (status === 'approved') { color = '#a855f7'; bgColor = 'rgba(168,85,247, 0.1)'; }
     else if (status === 'rejected') { color = '#ef4444'; bgColor = 'rgba(239, 68, 68, 0.1)'; }
-    else { color = '#f59e0b'; bgColor = 'rgba(245, 158, 11, 0.1)'; }
+    else { color = '#c4b5fd'; bgColor = 'rgba(168,85,247, 0.1)'; }
     
     return (
       <span style={{ 
@@ -112,8 +112,8 @@ const RegistrationDetails = () => {
       )}
 
       {isApproved && (
-        <div style={{ padding: '15px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '8px', marginBottom: '20px' }}>
-          <p style={{ color: '#10b981', margin: 0, fontWeight: 'bold' }}>
+        <div style={{ padding: '15px', background: 'rgba(168,85,247, 0.1)', border: '1px solid rgba(168,85,247, 0.3)', borderRadius: '8px', marginBottom: '20px' }}>
+          <p style={{ color: '#a855f7', margin: 0, fontWeight: 'bold' }}>
             🎉 Your registration has been approved!
           </p>
         </div>
@@ -143,7 +143,7 @@ const RegistrationDetails = () => {
         
         {registration.submission_file ? (
           <div>
-            <p style={{ color: '#10b981', marginBottom: '10px' }}>✓ Project successfully submitted</p>
+            <p style={{ color: '#a855f7', marginBottom: '10px' }}>✓ Project successfully submitted</p>
             <a href={`http://localhost:5000/${registration.submission_file}`} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none' }}>
               View Submission File
             </a>
@@ -151,20 +151,20 @@ const RegistrationDetails = () => {
         ) : (
           <div>
             {registration.payment_status !== 'paid' ? (
-              <div style={{ padding: '15px', background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.3)', borderRadius: '8px' }}>
-                <p style={{ color: '#f59e0b', margin: 0 }}>
+              <div style={{ padding: '15px', background: 'rgba(168,85,247, 0.1)', border: '1px solid rgba(168,85,247, 0.3)', borderRadius: '8px' }}>
+                <p style={{ color: '#c4b5fd', margin: 0 }}>
                   ⚠️ You must complete your payment before uploading the project.
                 </p>
                 <button 
                   onClick={handlePayment}
                   disabled={isRejected}
-                  style={{ marginTop: '10px', padding: '8px 15px', background: '#f59e0b', color: '#000', border: 'none', borderRadius: '5px', fontWeight: 'bold', cursor: isRejected ? 'not-allowed' : 'pointer', opacity: isRejected ? 0.5 : 1 }}>
+                  style={{ marginTop: '10px', padding: '8px 15px', background: '#c4b5fd', color: '#000', border: 'none', borderRadius: '5px', fontWeight: 'bold', cursor: isRejected ? 'not-allowed' : 'pointer', opacity: isRejected ? 0.5 : 1 }}>
                   Proceed to Payment
                 </button>
               </div>
             ) : registration.approval_status === 'pending' ? (
-              <div style={{ padding: '15px', background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.3)', borderRadius: '8px' }}>
-                <p style={{ color: '#f59e0b', margin: 0, fontWeight: 'bold' }}>
+              <div style={{ padding: '15px', background: 'rgba(168,85,247, 0.1)', border: '1px solid rgba(168,85,247, 0.3)', borderRadius: '8px' }}>
+                <p style={{ color: '#c4b5fd', margin: 0, fontWeight: 'bold' }}>
                   ⏳ Waiting for college approval to unlock project submission.
                 </p>
               </div>

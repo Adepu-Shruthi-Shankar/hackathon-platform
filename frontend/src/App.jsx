@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -24,6 +25,21 @@ const PrivateRoute = ({ children, allowedRole }) => {
   return children;
 };
 
+const RootRedirect = () => {
+  const token = localStorage.getItem('token');
+  const role = localStorage.getItem('role');
+
+  if (!token) return <Navigate to="/login" />;
+
+  switch (role) {
+    case 'admin': return <Navigate to="/admin/dashboard" />;
+    case 'student': return <Navigate to="/dashboard" />;
+    case 'college': return <Navigate to="/college/form" />;
+    case 'jury': return <Navigate to="/jury-dashboard" />;
+    default: return <Navigate to="/login" />;
+  }
+};
+
 // Wrapper that shows Navbar for student/college pages
 const WithNavbar = ({ children }) => (
   <div className="app-container">
@@ -33,6 +49,19 @@ const WithNavbar = ({ children }) => (
 );
 
 function App() {
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const cards = document.querySelectorAll('.hackathon-card, .glass-card, .hack-card, .stat-card, .login-card, .manage-card, .card');
+      for (const c of cards) {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -40,8 +69,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<StudentSignup />} />
 
+        {/* Root Redirect */}
+        <Route path="/" element={<RootRedirect />} />
+
         {/* Admin — no Navbar, uses Sidebar */}
-        <Route path="/" element={<PrivateRoute allowedRole="admin"><Dashboard /></PrivateRoute>} />
+        <Route path="/admin/dashboard" element={<PrivateRoute allowedRole="admin"><Dashboard /></PrivateRoute>} />
         <Route path="/hackathons" element={<PrivateRoute allowedRole="admin"><Hackathons /></PrivateRoute>} />
         <Route path="/jury" element={<PrivateRoute allowedRole="admin"><Jury /></PrivateRoute>} />
         <Route path="/manage/:id" element={<PrivateRoute allowedRole="admin"><ManageHackathon /></PrivateRoute>} />
