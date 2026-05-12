@@ -10,7 +10,7 @@ const RegistrationDetails = () => {
 
   const fetchDetails = useCallback(async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/registrations/${id}`);
+      const res = await fetch(`https://hackathon-platform-3bd3.onrender.com/api/registrations/${id}`);
       const data = await res.json();
       if (data.success) {
         setRegistration(data.data);
@@ -38,7 +38,7 @@ const RegistrationDetails = () => {
     formData.append('registration_id', id);
 
     try {
-      const res = await fetch('http://localhost:5000/api/upload', {
+      const res = await fetch('https://hackathon-platform-3bd3.onrender.com/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -143,8 +143,9 @@ const RegistrationDetails = () => {
         
         {registration.submission_file ? (
           <div>
-            <p style={{ color: '#a855f7', marginBottom: '10px' }}>✓ Project successfully submitted</p>
-            <a href={`http://localhost:5000/${registration.submission_file}`} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none' }}>
+            <p style={{ color: '#10b981', marginBottom: '10px' }}>✓ Project successfully submitted</p>
+            <a href={`https://hackathon-platform-3bd3.onrender.com/${registration.submission_file}`} target="_blank" rel="noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none' }}>
+
               View Submission File
             </a>
           </div>

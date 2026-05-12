@@ -26,8 +26,8 @@ function ManageHackathon() {
     try {
       const [hackRes, regRes, juryRes] = await Promise.all([
         API.get('/hackathons/' + id),
-        fetch('http://localhost:5000/api/college/registrations').then(r => r.json()),
-        fetch('http://localhost:5000/api/jury-dashboard/submissions').then(r => r.json())
+        fetch('https://hackathon-platform-3bd3.onrender.com/api/college/registrations').then(r => r.json()),
+        fetch('https://hackathon-platform-3bd3.onrender.com/api/jury-dashboard/submissions').then(r => r.json())
       ]);
       setHackathon(hackRes.data.hackathon);
 
@@ -40,7 +40,7 @@ function ManageHackathon() {
       setJuryResults(allJury.filter(j => String(j.hackathon_id) === String(id)));
 
       // Check if winner already announced
-      const winnerRes = await fetch('http://localhost:5000/api/winner/' + id).then(r => r.json());
+      const winnerRes = await fetch('https://hackathon-platform-3bd3.onrender.com/api/winner/' + id).then(r => r.json());
       if (winnerRes.data) setWinnerAnnounced(true);
 
     } catch (err) {
@@ -53,7 +53,7 @@ function ManageHackathon() {
   const handleAction = async (regId, action) => {
     if (!window.confirm(`Are you sure you want to ${action} this registration?`)) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/${action}/${regId}`, { method: 'PUT' });
+      const res = await fetch(`https://hackathon-platform-3bd3.onrender.com/api/${action}/${regId}`, { method: 'PUT' });
       const data = await res.json();
       if (data.success) {
         setRegistrations(prev =>
@@ -75,7 +75,7 @@ function ManageHackathon() {
   try {
     const details = typeof topResult.team_details === 'string'
       ? JSON.parse(topResult.team_details) : topResult.team_details;
-    const res = await fetch('http://localhost:5000/api/announce-winner', {
+    const res = await fetch('https://hackathon-platform-3bd3.onrender.com/api/announce-winner', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -306,7 +306,7 @@ function ManageHackathon() {
                           </td>
                           <td>
                             {reg.submission_file && (
-                              <a href={`http://localhost:5000/${reg.submission_file}`} target="_blank" rel="noreferrer"
+                              <a href={`https://hackathon-platform-3bd3.onrender.com/${reg.submission_file}`} target="_blank" rel="noreferrer"
                                 style={{ color: '#a855f7', fontSize: 12 }}>View File</a>
                             )}
                           </td>
@@ -425,7 +425,7 @@ function ManageHackathon() {
                     <div className="modal-section-label">Submission File</div>
                     <div className="file-preview-box">
                       <span>📁 {selectedReg.submission_file.split('/').pop()}</span>
-                      <a href={`http://localhost:5000/${selectedReg.submission_file}`} target="_blank" rel="noreferrer"
+                      <a href={`https://hackathon-platform-3bd3.onrender.com/${selectedReg.submission_file}`} target="_blank" rel="noreferrer"
                         className="btn-table-manage" style={{ textDecoration: 'none' }}>Open File</a>
                     </div>
                   </>

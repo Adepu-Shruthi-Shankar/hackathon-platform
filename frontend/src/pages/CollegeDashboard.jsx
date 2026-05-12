@@ -10,7 +10,7 @@ function CollegeDashboard() {
   const [loading,    setLoading]    = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/hackathons/public')
+    axios.get('https://hackathon-platform-3bd3.onrender.com/api/hackathons/public')
       .then(res => setHackathons(res.data.hackathons))
       .catch(err => console.error(err))
       .finally(() => setLoading(false));

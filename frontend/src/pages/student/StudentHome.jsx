@@ -27,14 +27,14 @@ const StudentHome = () => {
     const fetchData = async () => {
       try {
         const [regRes, hackRes] = await Promise.all([
-          fetch(`http://localhost:5000/api/my-registrations/${user?.id}`),
-          fetch('http://localhost:5000/api/hackathons/public')
+          fetch(`https://hackathon-platform-3bd3.onrender.com/api/my-registrations/${user?.id}`),
+          fetch('https://hackathon-platform-3bd3.onrender.com/api/hackathons/public')
         ]);
         const regData = await regRes.json();
         const hackData = await hackRes.json();
         if (regData.success) setRegistrations(regData.data);
         if (hackData.hackathons) setHackathons(hackData.hackathons);
-        const winnerRes = await fetch('http://localhost:5000/api/winners');
+        const winnerRes = await fetch('https://hackathon-platform-3bd3.onrender.com/api/winners');
         const winnerData = await winnerRes.json();
         if (winnerData.success) setWinners(winnerData.data);
       } catch (err) {

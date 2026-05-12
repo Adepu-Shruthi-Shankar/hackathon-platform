@@ -12,7 +12,7 @@ function StudentDashboard() {
   const [activeFilter, setActiveFilter] = useState('all');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/hackathons/public')
+    axios.get('https://hackathon-platform-3bd3.onrender.com/api/hackathons/public')
       .then(res => {
         setHackathons(res.data.hackathons);
         setFiltered(res.data.hackathons);

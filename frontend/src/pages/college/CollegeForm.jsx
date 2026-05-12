@@ -37,7 +37,7 @@ const CollegeForm = () => {
     formData.append('professor_id', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/college/verify', {
+      const response = await fetch('https://hackathon-platform-3bd3.onrender.com/api/college/verify', {
         method: 'POST',
         body: formData,
       });

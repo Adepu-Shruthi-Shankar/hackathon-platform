@@ -12,7 +12,7 @@ const PaymentPage = () => {
   useEffect(() => {
     const fetchRegistration = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/registrations/${id}`);
+        const response = await fetch(`https://hackathon-platform-3bd3.onrender.com/api/registrations/${id}`);
         if (response.ok) {
           const data = await response.json();
           setRegistration(data.data);
@@ -31,7 +31,7 @@ const PaymentPage = () => {
   const handlePayment = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/payment/${id}`, {
+      const response = await fetch(`https://hackathon-platform-3bd3.onrender.com/api/payment/${id}`, {
         method: 'PUT',
       });
       if (response.ok) {

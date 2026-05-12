@@ -40,7 +40,7 @@ const RegisterForm = () => {
       const student_id = user ? user.id : 1;
       
       // Try calling our backend API
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://hackathon-platform-3bd3.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -28,14 +28,14 @@ const CollegeDashboard = () => {
     try {
       setLoading(true);
       const [regRes, hackRes] = await Promise.all([
-        fetch('http://localhost:5000/api/college/registrations'),
-        fetch('http://localhost:5000/api/hackathons/public')
+        fetch('https://hackathon-platform-3bd3.onrender.com/api/college/registrations'),
+        fetch('https://hackathon-platform-3bd3.onrender.com/api/hackathons/public')
       ]);
       const regData = await regRes.json();
       const hackData = await hackRes.json();
       if (regData.success) setRegistrations(regData.data);
       if (hackData.hackathons) setHackathons(hackData.hackathons);
-      const winnerRes = await fetch('http://localhost:5000/api/winners');
+      const winnerRes = await fetch('https://hackathon-platform-3bd3.onrender.com/api/winners');
       const winnerData = await winnerRes.json();
       if (winnerData.success) setWinners(winnerData.data);
     } catch (err) {
@@ -50,7 +50,7 @@ const CollegeDashboard = () => {
   const handleAction = async (id, action) => {
     if (!window.confirm(`Are you sure you want to ${action} this registration?`)) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/${action}/${id}`, { method: 'PUT' });
+      const res = await fetch(`https://hackathon-platform-3bd3.onrender.com/api/${action}/${id}`, { method: 'PUT' });
       const data = await res.json();
       if (data.success) fetchData();
       else alert(data.message || `Failed to ${action}`);
@@ -157,9 +157,9 @@ const CollegeDashboard = () => {
               <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {reg.submission_file ? (
                   <div style={{ display: 'flex', gap: 10 }}>
-                    <a href={`http://localhost:5000/${reg.submission_file}`} target="_blank" rel="noreferrer"
+                    <a href={`https://hackathon-platform-3bd3.onrender.com/${reg.submission_file}`} target="_blank" rel="noreferrer"
                       style={{ padding: '6px 10px', background: 'rgba(255,255,255,0.1)', color: 'var(--accent-color)', textDecoration: 'none', borderRadius: 5, fontSize: '0.85rem', flex: 1, textAlign: 'center', border: '1px solid var(--border)' }}>View</a>
-                    <a href={`http://localhost:5000/${reg.submission_file}`} download target="_blank" rel="noreferrer"
+                    <a href={`https://hackathon-platform-3bd3.onrender.com/${reg.submission_file}`} download target="_blank" rel="noreferrer"
                       style={{ padding: '6px 10px', background: 'var(--accent-color)', color: '#000', textDecoration: 'none', borderRadius: 5, fontSize: '0.85rem', fontWeight: 'bold', flex: 1, textAlign: 'center' }}>Download</a>
                   </div>
                 ) : (

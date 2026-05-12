@@ -9,7 +9,7 @@ const CollegeVerifications = () => {
   useEffect(() => {
     const fetchVerifications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/college/verification');
+        const response = await fetch('https://hackathon-platform-3bd3.onrender.com/api/college/verification');
         const data = await response.json();
         if (data.success) {
           setVerifications(data.data);
@@ -56,7 +56,7 @@ const CollegeVerifications = () => {
               {v.professor_id && (
                 <div style={{ marginTop: 'auto', borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--border)' }}>
                   <img 
-                    src={`http://localhost:5000/${v.professor_id}`} 
+                    src={`https://hackathon-platform-3bd3.onrender.com/${v.professor_id}`} 
                     alt="Professor ID" 
                     style={{ width: '100%', height: '140px', objectFit: 'cover', display: 'block' }}
                   />

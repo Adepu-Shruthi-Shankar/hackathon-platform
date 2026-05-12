@@ -16,7 +16,7 @@ function JuryDashboard() {
 
   const fetchSubmissions = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/jury-dashboard/submissions');
+      const res = await fetch('https://hackathon-platform-3bd3.onrender.com/api/jury-dashboard/submissions');
       const data = await res.json();
       if (data.success) setSubmissions(data.data);
     } catch (err) { console.error(err); }
@@ -35,7 +35,7 @@ function JuryDashboard() {
     if (!rating) return alert('Please select a rating');
     setSubmitting(true);
     try {
-      const res = await fetch('http://localhost:5000/api/jury-dashboard/evaluate', {
+      const res = await fetch('https://hackathon-platform-3bd3.onrender.com/api/jury-dashboard/evaluate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ registration_id: evaluating.id, jury_id: user.id, rating, feedback })
@@ -136,8 +136,8 @@ function JuryDashboard() {
             <div style={{ background: '#0E1221', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 16, padding: 24 }}>
               <p style={{ color: '#7A7A9D', fontSize: 11, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 16, fontWeight: 600 }}>Submission File</p>
               {evaluating.submission_file ? (
-                <a href={`http://localhost:5000/${evaluating.submission_file}`} target="_blank" rel="noreferrer"
-                  style={{ color: '#a855f7', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: 'rgba(168,85,247,0.1)', borderRadius: 10, border: '1px solid rgba(168,85,247,0.2)', textDecoration: 'none' }}>
+                <a href={`https://hackathon-platform-3bd3.onrender.com/${evaluating.submission_file}`} target="_blank" rel="noreferrer"
+                  style={{ color: '#8358FF', fontSize: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '12px 16px', background: 'rgba(131,88,255,0.1)', borderRadius: 10, border: '1px solid rgba(131,88,255,0.2)', textDecoration: 'none' }}>
                   📁 View Submission File
                 </a>
               ) : (
