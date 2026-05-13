@@ -1,0 +1,197 @@
+/* ── MOBILE RESPONSIVE FIXES ── */
+/* Add this file to your project and import it in main.jsx or App.jsx */
+
+@media (max-width: 768px) {
+
+  /* ── Navbar ── */
+  .navbar {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .navbar-links {
+    display: none; /* hide nav links on mobile */
+  }
+
+  .navbar-logo h2 {
+    font-size: 15px;
+  }
+
+  .navbar-logo-sub {
+    display: none;
+  }
+
+  .nav-logout-btn span {
+    display: none; /* show only icon on mobile */
+  }
+
+  /* ── Page Layout ── */
+  .page-header {
+    padding: 16px 16px 0;
+  }
+
+  .page-header h3 {
+    font-size: 18px;
+  }
+
+  .page-content {
+    padding: 16px 16px 32px;
+  }
+
+  /* ── Stat Rows ── */
+  .stat-row,
+  .stats-row,
+  .manage-stats-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px;
+  }
+
+  .stat-number,
+  .stat-value {
+    font-size: 32px !important;
+  }
+
+  .manage-stat-number {
+    font-size: 24px !important;
+  }
+
+  /* ── Hackathon Grid ── */
+  .hackathon-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Tables — make them scrollable ── */
+  .table-card {
+    overflow-x: auto;
+  }
+
+  .data-table {
+    min-width: 600px; /* forces scroll instead of squishing */
+  }
+
+  .table-card-header {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* ── Form Rows ── */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+  }
+
+  /* ── Tabs ── */
+  .page-tabs {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+  }
+
+  .tab-btn {
+    padding: 7px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* ── Manage Info Card ── */
+  .manage-info-card {
+    padding: 18px;
+  }
+
+  .manage-info-top h2 {
+    font-size: 16px;
+  }
+
+  .manage-meta {
+    gap: 12px;
+  }
+
+  /* ── Dashboard ── */
+  .dashboard-container {
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  .welcome-text {
+    font-size: 1.5rem !important;
+  }
+
+  /* ── Login Card ── */
+  .login-card {
+    padding: 28px 20px;
+    margin: 16px;
+    max-width: 100%;
+  }
+
+  /* ── College Card ── */
+  .college-card {
+    padding: 1.25rem;
+    margin: 12px;
+  }
+
+  .card-title {
+    font-size: 1.4rem !important;
+  }
+
+  /* ── Modal ── */
+  .modal-card {
+    max-height: 92vh;
+    margin: 0 8px;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  /* ── Buttons ── */
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn-primary,
+  .form-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Table Actions ── */
+  .table-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* ── Winner Banner ── */
+  .winner-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px;
+  }
+
+  /* ── Jury Form Card ── */
+  .jury-form-card {
+    padding: 1.25rem;
+  }
+}
+
+/* ── Extra small phones (below 400px) ── */
+@media (max-width: 400px) {
+  .stat-row,
+  .stats-row,
+  .manage-stats-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .navbar-icon-btn {
+    display: none;
+  }
+}
